@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+ <title>CIFAR-10 VERİ SETİ İLE GÖRÜNTÜ TANIMA</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+	<link rel="stylesheet" href="C:\Users\Sibel\Desktop\bitirme_projesi\static\css\style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+
+        <h3>Resim Dosyası Yükleyin</h3>
+        <hr>
+
+        <form action="{{ url_for('upload_image')}}" method="POST" enctype="multipart/form-data">
+
+          <div class="form-group">
+            <label>Dosya Seç</label>
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" name="image" id="image">
+              <button type="submit" class="btn btn-primary">Dosya Yükle</button>
+              
+            </div>
+          </div>
+
+          
+
+        </form>
+
+      </div>
+    </div>
+    <br>
+    {{ prediction }}
+  </div>
+</body>
